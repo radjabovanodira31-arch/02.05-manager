@@ -87,12 +87,12 @@ npm run dev
 ## 🛍️ Mahsulotlar katalogi
 
 ### To'plamlar
-- Klara to'plami: 210,000 so'm
-- Alisa to'plami: 230,000 so'm
-- Zara to'plami: 210,000 so'm
-- Ella to'plami: 200,000 so'm
-- Ro'za to'plami: 210,000 so'm
-- Liza to'plami: 500,000 so'm
+- Klara to'plami: 160, 000 so'm
+- Alisa to'plami: 170,000 so'm
+- Zara to'plami: 150,000 so'm
+- Ella to'plami: 150,000 so'm
+- Ro'za to'plami: 150,000 so'm
+- Liza to'plami: 350,000 so'm
 
 ### Kategoriyalar
 - **Matolar** - 6 xil trikotaj va furnitura
