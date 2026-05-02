@@ -1,0 +1,20 @@
+{
+  "name": "telegram-sales-bot",
+  "version": "1.0.0",
+  "description": "Telegram sales manager bot for puppet/doll sets and materials",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": ["telegram", "bot", "sales"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^4.15.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
