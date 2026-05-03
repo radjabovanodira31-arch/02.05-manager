@@ -3,6 +3,8 @@
 
 const { Telegraf, Markup } = require('telegraf');
 const dotenv = require('dotenv');
+const fs = require('fs');
+const path = require('path');
 
 // .env fayldan sozlamalarni o'qish
 dotenv.config();
@@ -29,37 +31,37 @@ const sets = [
   {
     id: 1,
     name: '1. Klara to\'plami',
-    price: 210000,
+    price: 160000,
     image: 'https://t.me/master_tkaniart/543'
   },
   {
     id: 2,
     name: '2. Alisa to\'plami',
-    price: 230000,
+    price: 170000,
     image: 'https://t.me/master_tkaniart/543'
   },
   {
     id: 3,
     name: '3. Zara to\'plami',
-    price: 210000,
+    price: 150000,
     image: 'https://t.me/master_tkaniart/543'
   },
   {
     id: 4,
     name: '4. Ella to\'plami',
-    price: 200000,
+    price: 150000,
     image: 'https://t.me/master_tkaniart/543'
   },
   {
     id: 5,
     name: '5. Ro\'za to\'plami',
-    price: 210000,
+    price: 150000,
     image: 'https://t.me/master_tkaniart/543'
   },
   {
     id: 6,
     name: '6. Liza to\'plami',
-    price: 500000,
+    price: 350000,
     image: 'https://t.me/master_tkaniart/543'
   }
 ];
@@ -235,14 +237,28 @@ ${stats.orders.length > 0 ? stats.orders.map((o, i) => `${i + 1}. ${o.name} - ${
 // ========== TUGMA BOSILGAN VAQTLAR ==========
 
 // 📚 Bepul darslik
-bot.hears('📚 Bepul darslik', (ctx) => {
+bot.hears('📚 Bepul darslik', async (ctx) => {
   const message = `Salom! 7 yillik hunarmand master sifatida, ijodkorlikka qiziqish bildirayotganligingizdan hursandman! 🎉
 
 Marhamat bepul darslikni oling:`;
   
   ctx.reply(message);
+
+  // Local image file in the images/ folder
+  const masterPhotoPath = path.join(__dirname, 'images', 'photo_2026-05-02_19-11-11.jpg');
+  if (fs.existsSync(masterPhotoPath)) {
+    try {
+      await ctx.replyWithPhoto({ source: fs.createReadStream(masterPhotoPath) }, { caption: '📸 Masterning suratini ko\'ring' });
+    } catch (error) {
+      console.error('Rasmni yuborishda xato:', error);
+      await ctx.reply('⚠️ Rasmni yuborishda xato bo‘ldi. Iltimos, qayta urinib ko‘ring.');
+    }
+  } else {
+    console.error('Rasm topilmadi:', masterPhotoPath);
+    await ctx.reply('⚠️ Rasm topilmadi. Iltimos, fayl nomini tekshiring.');
+  }
   
-  // Rasm va link yuborish (Telegram channeldan)
+  // Link button
   ctx.reply(
     'Batafsil darslik uchun kanalga o\'ting:',
     Markup.inlineKeyboard([
