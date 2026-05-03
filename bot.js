@@ -32,93 +32,93 @@ const sets = [
     id: 1,
     name: '1. Klara to\'plami',
     price: 160000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-01-19.jpg')
   },
   {
     id: 2,
     name: '2. Alisa to\'plami',
     price: 170000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-01-30.jpg')
   },
   {
     id: 3,
     name: '3. Zara to\'plami',
     price: 150000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-01-44.jpg')
   },
   {
     id: 4,
     name: '4. Ella to\'plami',
     price: 150000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-01-55.jpg')
   },
   {
     id: 5,
     name: '5. Ro\'za to\'plami',
     price: 150000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-02-15.jpg')
   },
   {
     id: 6,
     name: '6. Liza to\'plami',
     price: 350000,
-    image: 'https://t.me/master_tkaniart/543'
+    image: path.join(__dirname, 'images', 'photo_2026-05-02_19-02-24.jpg')
   }
 ];
 
 // Materiallar (Matolar)
 const materials = {
   matolar: [
-    { id: 1, name: 'Kukolniy trikotaj 0,5 yarim metr', price: 35000, image: 'https://via.placeholder.com/150?text=Trikotaj' },
-    { id: 2, name: 'Alisa uchun to\'plam matolari +furnitura', price: 55000, image: 'https://via.placeholder.com/150?text=Alisa' },
-    { id: 3, name: 'Klara uchun to\'plam matosi +furnitura', price: 45000, image: 'https://via.placeholder.com/150?text=Klara' },
-    { id: 4, name: 'Zara uchun to\'plam matosi + furnitura', price: 45000, image: 'https://via.placeholder.com/150?text=Zara' },
-    { id: 5, name: 'Roza uchun to\'plam matosi + furnitura', price: 45000, image: 'https://via.placeholder.com/150?text=Roza' },
-    { id: 6, name: 'Ella uchun to\'plam matosi + furnitura', price: 40000, image: 'https://via.placeholder.com/150?text=Ella' }
+    { id: 1, name: 'Kukolniy trikotaj 0,5 yarim metr', price: 35000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-02-38.jpg') },
+    { id: 2, name: 'Alisa uchun to\'plam matolari +furnitura', price: 55000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-05-08.jpg') },
+    { id: 3, name: 'Klara uchun to\'plam matosi +furnitura', price: 45000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-05-20.jpg') },
+    { id: 4, name: 'Zara uchun to\'plam matosi + furnitura', price: 45000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-05-32.jpg') },
+    { id: 5, name: 'Roza uchun to\'plam matosi + furnitura', price: 45000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-05-42.jpg') },
+    { id: 6, name: 'Ella uchun to\'plam matosi + furnitura', price: 40000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-05-53.jpg') }
   ],
   
   sochlar: [
-    { id: 101, name: 'To\'q jigarrang 25 smli sochlar', price: 23000, image: 'https://via.placeholder.com/150?text=Jigarrang' },
-    { id: 102, name: 'Kashtan rangli 25 smli sochlar', price: 23000, image: 'https://via.placeholder.com/150?text=Kashtan' },
-    { id: 103, name: 'Sariq soch 25 sm', price: 23000, image: 'https://via.placeholder.com/150?text=Sariq' },
-    { id: 104, name: 'To\'q jigarrang 15 smli', price: 18000, image: 'https://via.placeholder.com/150?text=Jigarrang15' },
-    { id: 105, name: 'Sariq soch 15 smli', price: 18000, image: 'https://via.placeholder.com/150?text=Sariq15' },
-    { id: 106, name: 'To\'q jigarrang soch 5 smli', price: 12000, image: 'https://via.placeholder.com/150?text=Jigarrang5' },
-    { id: 107, name: 'To\'q Kashtan soch 5 smli', price: 12000, image: 'https://via.placeholder.com/150?text=Kashtan5' },
-    { id: 108, name: 'Pushti soch 25 smli', price: 23000, image: 'https://via.placeholder.com/150?text=Pushti' },
-    { id: 109, name: 'Siyoxrang soch 25 smli', price: 23000, image: 'https://via.placeholder.com/150?text=Siyox' },
-    { id: 110, name: 'To\'lqin kashtan soch 20 sm', price: 25000, image: 'https://via.placeholder.com/150?text=Tolqin' },
-    { id: 111, name: 'To\'lqin russiy 15 smli', price: 20000, image: 'https://via.placeholder.com/150?text=TolqinRus' },
-    { id: 112, name: 'Lokon kashtan rang, 15 sm', price: 25000, image: 'https://via.placeholder.com/150?text=Lokon' }
+    { id: 101, name: 'To\'q jigarrang 25 smli sochlar', price: 23000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-06-08.jpg') },
+    { id: 102, name: 'Kashtan rangli 25 smli sochlar', price: 23000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-06-28.jpg') },
+    { id: 103, name: 'Sariq soch 25 sm', price: 23000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-06-38.jpg') },
+    { id: 104, name: 'To\'q jigarrang 15 smli', price: 18000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-07-08.jpg') },
+    { id: 105, name: 'Sariq soch 15 smli', price: 18000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-07-18.jpg') },
+    { id: 106, name: 'To\'q jigarrang soch 5 smli', price: 12000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-07-31.jpg') },
+    { id: 107, name: 'To\'q Kashtan soch 5 smli', price: 12000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-07-42.jpg') },
+    { id: 108, name: 'Pushti soch 25 smli', price: 23000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-07-50.jpg') },
+    { id: 109, name: 'Siyoxrang soch 25 smli', price: 23000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-04.jpg') },
+    { id: 110, name: 'To\'lqin kashtan soch 20 sm', price: 25000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-13.jpg') },
+    { id: 111, name: 'To\'lqin russiy 15 smli', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-22.jpg') },
+    { id: 112, name: 'Lokon kashtan rang, 15 sm', price: 25000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-33.jpg') }
   ],
   
   oyoqKiyim: [
-    { id: 201, name: '5 smli och pushti keda', price: 20000, image: 'https://via.placeholder.com/150?text=Keda1' },
-    { id: 202, name: 'To\'q pushti keda', price: 20000, image: 'https://via.placeholder.com/150?text=Keda2' },
-    { id: 203, name: 'Qora keda', price: 20000, image: 'https://via.placeholder.com/150?text=KedaQora' },
-    { id: 204, name: 'Havorang keda', price: 20000, image: 'https://via.placeholder.com/150?text=KedaHava' },
-    { id: 205, name: 'Keda siyoxrang', price: 20000, image: 'https://via.placeholder.com/150?text=KedaSiyox' },
-    { id: 206, name: 'Sandal 5,5 smli, pushti', price: 25000, image: 'https://via.placeholder.com/150?text=Sandal' }
+    { id: 201, name: '5 smli och pushti keda', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-42.jpg') },
+    { id: 202, name: 'To\'q pushti keda', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-08-51.jpg') },
+    { id: 203, name: 'Qora keda', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-03.jpg') },
+    { id: 204, name: 'Havorang keda', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-11.jpg') },
+    { id: 205, name: 'Keda siyoxrang', price: 20000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-20.jpg') },
+    { id: 206, name: 'Sandal 5,5 smli, pushti', price: 25000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-27.jpg') }
   ],
   
   aksessuarlar: [
-    { id: 301, name: 'Tugmacha 18 mmli', price: 300, image: 'https://via.placeholder.com/150?text=Tugma18' },
-    { id: 302, name: 'Tugmacha 12 mmli', price: 200, image: 'https://via.placeholder.com/150?text=Tugma12' },
-    { id: 303, name: 'Remen regulyator', price: 1000, image: 'https://via.placeholder.com/150?text=Remen' },
-    { id: 304, name: 'Qora ko\'z 8 mmli (1 pachka)', price: 6000, image: 'https://via.placeholder.com/150?text=Koz8' },
-    { id: 305, name: 'Qora ko\'z 4 mmli (1 pachka)', price: 5000, image: 'https://via.placeholder.com/150?text=Koz4' },
-    { id: 306, name: 'Kipriklar 8 mmli', price: 13000, image: 'https://via.placeholder.com/150?text=Kiprik' },
-    { id: 307, name: 'Metall knopka (sumka uchun)', price: 1000, image: 'https://via.placeholder.com/150?text=Knopka' },
-    { id: 308, name: 'Termonakleyka 12 smga', price: 12000, image: 'https://via.placeholder.com/150?text=Termo' },
-    { id: 309, name: 'Ko\'zli yuz termonakleykasi (dona)', price: 3000, image: 'https://via.placeholder.com/150?text=YuzTermo' },
-    { id: 310, name: 'Kiprikli yuz', price: 3000, image: 'https://via.placeholder.com/150?text=YuzKiprik' },
-    { id: 311, name: 'Jung igna 9 smli', price: 1500, image: 'https://via.placeholder.com/150?text=Igna' },
-    { id: 312, name: 'Oq jung 50 gr', price: 35000, image: 'https://via.placeholder.com/150?text=Jung' },
-    { id: 313, name: 'Dermantin 30x30 smli havorang +pushti (2 ta)', price: 18000, image: 'https://via.placeholder.com/150?text=Dermantin' },
-    { id: 314, name: 'Zanjir 3 mmli (1 metr)', price: 4000, image: 'https://via.placeholder.com/150?text=Zanjir' },
-    { id: 315, name: 'Metal knopka (sarafan uchun, 1 juft)', price: 4000, image: 'https://via.placeholder.com/150?text=KnopkaSarafan' },
-    { id: 316, name: 'Oq quyoncha 6 smli', price: 9000, image: 'https://via.placeholder.com/150?text=Quyoncha' },
-    { id: 317, name: 'Xalqa 6 mmli (1 pachka)', price: 9000, image: 'https://via.placeholder.com/150?text=Halqa' }
+    { id: 301, name: 'Tugmacha 18 mmli', price: 300, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-36.jpg') },
+    { id: 302, name: 'Tugmacha 12 mmli', price: 200, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-46.jpg') },
+    { id: 303, name: 'Remen regulyator', price: 1000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-09-59.jpg') },
+    { id: 304, name: 'Qora ko\'z 8 mmli (1 pachka)', price: 6000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-10-16.jpg') },
+    { id: 305, name: 'Qora ko\'z 4 mmli (1 pachka)', price: 5000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-10-24.jpg') },
+    { id: 306, name: 'Kipriklar 8 mmli', price: 13000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-10-33.jpg') },
+    { id: 307, name: 'Metall knopka (sumka uchun)', price: 1000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-10-47.jpg') },
+    { id: 308, name: 'Termonakleyka 12 smga', price: 12000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-10-55.jpg') },
+    { id: 309, name: 'Ko\'zli yuz termonakleykasi (dona)', price: 3000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-11-02.jpg') },
+    { id: 310, name: 'Kiprikli yuz', price: 3000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-11-19.jpg') },
+    { id: 311, name: 'Jung igna 9 smli', price: 1500, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-11-59.jpg') },
+    { id: 312, name: 'Oq jung 50 gr', price: 35000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-12-07.jpg') },
+    { id: 313, name: 'Dermantin 30x30 smli havorang +pushti (2 ta)', price: 18000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-12-16.jpg') },
+    { id: 314, name: 'Zanjir 3 mmli (1 metr)', price: 4000, image: path.join(__dirname, 'images', 'termonakleyka web.jpg') },
+    { id: 315, name: 'Metal knopka (sarafan uchun, 1 juft)', price: 4000, image: path.join(__dirname, 'images', 'photo_2026-05-02_16-06-08.jpg') },
+    { id: 316, name: 'Oq quyoncha 6 smli', price: 9000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-00-46.jpg') },
+    { id: 317, name: 'Xalqa 6 mmli (1 pachka)', price: 9000, image: path.join(__dirname, 'images', 'photo_2026-05-02_19-02-50.jpg') }
   ]
 };
 
@@ -276,22 +276,33 @@ bot.hears('🎁 To\'plamlar', async (ctx) => {
     const caption = `<b>${set.name}</b>\n\n💰 <b>Narxi: ${set.price.toLocaleString()} so\'m</b>`;
     
     try {
-      // Rasm bilan birga caption yuborish
-      await ctx.replyWithPhoto(
-        set.image,
-        {
-          caption: caption,
-          parse_mode: 'HTML',
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: '🛒 Savatga qo\'shish', callback_data: `add_set_${set.id}` }],
-              [{ text: 'ℹ️ Batafsil', callback_data: `info_set_${set.id}` }]
-            ]
+      // Fayl mavjudligini tekshirish
+      if (fs.existsSync(set.image)) {
+        // Local faylni yuborish
+        await ctx.replyWithPhoto(
+          { source: fs.createReadStream(set.image) },
+          {
+            caption: caption,
+            parse_mode: 'HTML',
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: '🛒 Savatga qo\'shish', callback_data: `add_set_${set.id}` }],
+                [{ text: 'ℹ️ Batafsil', callback_data: `info_set_${set.id}` }]
+              ]
+            }
           }
-        }
-      );
+        );
+      } else {
+        // Rasm topilmasa, faqat text yuborish
+        await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
+          [Markup.button.callback('🛒 Savatga qo\'shish', `add_set_${set.id}`)],
+          [Markup.button.callback('ℹ️ Batafsil', `info_set_${set.id}`)]
+        ]));
+        console.error('Rasm topilmadi:', set.image);
+      }
     } catch (err) {
       // Agar rasm yuborish muvaffaqiyatsiz bo'lsa, faqat text yuborish
+      console.error('Rasmni yuborishda xato:', err);
       await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Savatga qo\'shish', `add_set_${set.id}`)],
         [Markup.button.callback('ℹ️ Batafsil', `info_set_${set.id}`)]
@@ -364,19 +375,27 @@ bot.action('section_matolar', async (ctx) => {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
     
     try {
-      await ctx.replyWithPhoto(
-        item.image,
-        {
-          caption: caption,
-          parse_mode: 'HTML',
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
-            ]
+      if (fs.existsSync(item.image)) {
+        await ctx.replyWithPhoto(
+          { source: fs.createReadStream(item.image) },
+          {
+            caption: caption,
+            parse_mode: 'HTML',
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
+              ]
+            }
           }
-        }
-      );
+        );
+      } else {
+        await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
+          [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
+        ]));
+        console.error('Rasm topilmadi:', item.image);
+      }
     } catch (err) {
+      console.error('Rasmni yuborishda xato:', err);
       await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
       ]));
@@ -394,19 +413,27 @@ bot.action('section_sochlar', async (ctx) => {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
     
     try {
-      await ctx.replyWithPhoto(
-        item.image,
-        {
-          caption: caption,
-          parse_mode: 'HTML',
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
-            ]
+      if (fs.existsSync(item.image)) {
+        await ctx.replyWithPhoto(
+          { source: fs.createReadStream(item.image) },
+          {
+            caption: caption,
+            parse_mode: 'HTML',
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
+              ]
+            }
           }
-        }
-      );
+        );
+      } else {
+        await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
+          [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
+        ]));
+        console.error('Rasm topilmadi:', item.image);
+      }
     } catch (err) {
+      console.error('Rasmni yuborishda xato:', err);
       await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
       ]));
@@ -424,19 +451,27 @@ bot.action('section_oyoq_kiyim', async (ctx) => {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
     
     try {
-      await ctx.replyWithPhoto(
-        item.image,
-        {
-          caption: caption,
-          parse_mode: 'HTML',
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
-            ]
+      if (fs.existsSync(item.image)) {
+        await ctx.replyWithPhoto(
+          { source: fs.createReadStream(item.image) },
+          {
+            caption: caption,
+            parse_mode: 'HTML',
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
+              ]
+            }
           }
-        }
-      );
+        );
+      } else {
+        await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
+          [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
+        ]));
+        console.error('Rasm topilmadi:', item.image);
+      }
     } catch (err) {
+      console.error('Rasmni yuborishda xato:', err);
       await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
       ]));
@@ -454,19 +489,27 @@ bot.action('section_aksessuarlar', async (ctx) => {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
     
     try {
-      await ctx.replyWithPhoto(
-        item.image,
-        {
-          caption: caption,
-          parse_mode: 'HTML',
-          reply_markup: {
-            inline_keyboard: [
-              [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
-            ]
+      if (fs.existsSync(item.image)) {
+        await ctx.replyWithPhoto(
+          { source: fs.createReadStream(item.image) },
+          {
+            caption: caption,
+            parse_mode: 'HTML',
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: '🛒 Savatga qo\'shish', callback_data: `add_product_${item.id}` }]
+              ]
+            }
           }
-        }
-      );
+        );
+      } else {
+        await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
+          [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
+        ]));
+        console.error('Rasm topilmadi:', item.image);
+      }
     } catch (err) {
+      console.error('Rasmni yuborishda xato:', err);
       await ctx.replyWithHTML(caption, Markup.inlineKeyboard([
         [Markup.button.callback('🛒 Savatga qo\'shish', `add_product_${item.id}`)]
       ]));
