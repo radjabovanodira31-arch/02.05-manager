@@ -122,6 +122,70 @@ const materials = {
   ]
 };
 
+const imagesDir = path.join(__dirname, 'images');
+const imageFiles = fs.existsSync(imagesDir) ? fs.readdirSync(imagesDir) : [];
+
+function normalizeText(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+
+function findMatchingImage(name) {
+  const normalizedName = normalizeText(name);
+  if (!normalizedName) return null;
+
+  const candidates = imageFiles.map(file => ({
+    file,
+    key: normalizeText(path.basename(file, path.extname(file)))
+  }));
+
+  const exactMatch = candidates.find(c => c.key === normalizedName);
+  if (exactMatch) return path.join(imagesDir, exactMatch.file);
+
+  const partialMatch = candidates.find(c => c.key.includes(normalizedName) || normalizedName.includes(c.key));
+  if (partialMatch) return path.join(imagesDir, partialMatch.file);
+
+  const nameWords = normalizedName.split(' ').filter(Boolean);
+  let bestCandidate = null;
+  let bestScore = 0;
+
+  for (const candidate of candidates) {
+    const candidateWords = new Set(candidate.key.split(' ').filter(Boolean));
+    const score = nameWords.filter(word => candidateWords.has(word)).length;
+    if (score > bestScore) {
+      bestScore = score;
+      bestCandidate = candidate;
+    }
+  }
+
+  if (bestCandidate && bestScore >= Math.min(2, nameWords.length)) {
+    return path.join(imagesDir, bestCandidate.file);
+  }
+
+  return null;
+}
+
+function resolveProductImages(items) {
+  for (const item of items) {
+    if (item.image && fs.existsSync(item.image)) continue;
+    const resolvedImage = findMatchingImage(item.name);
+    if (resolvedImage) {
+      item.image = resolvedImage;
+    } else {
+      console.warn(`Rasm topilmadi: ${item.name}`);
+    }
+  }
+}
+
+resolveProductImages(sets);
+resolveProductImages(materials.matolar);
+resolveProductImages(materials.sochlar);
+resolveProductImages(materials.oyoqKiyim);
+resolveProductImages(materials.aksessuarlar);
+
 // ========== YORDAMCHI FUNKTSIYALAR ==========
 
 // Foydalanuvchining savat ma'lumotlarini oling
@@ -245,10 +309,10 @@ Marhamat bepul darslikni oling:`;
   ctx.reply(message);
 
   // Local image file in the images/ folder
-  const masterPhotoPath = path.join(__dirname, 'images', 'photo_2026-05-02_19-11-11.jpg');
+  const masterPhotoPath = path.join(__dirname, 'images', 'master.jpg');
   if (fs.existsSync(masterPhotoPath)) {
     try {
-      await ctx.replyWithPhoto({ source: fs.createReadStream(masterPhotoPath) }, { caption: '📸 Masterning suratini ko\'ring' });
+      await ctx.replyWithPhoto(masterPhotoPath, { caption: '📸 Masterning suratini ko\'ring' });
     } catch (error) {
       console.error('Rasmni yuborishda xato:', error);
       await ctx.reply('⚠️ Rasmni yuborishda xato bo‘ldi. Iltimos, qayta urinib ko‘ring.');
@@ -274,13 +338,14 @@ bot.hears('🎁 To\'plamlar', async (ctx) => {
   // Har bir to'plam uchun alohida rasm va ma'lumot yuborish
   for (const set of sets) {
     const caption = `<b>${set.name}</b>\n\n💰 <b>Narxi: ${set.price.toLocaleString()} so\'m</b>`;
-    
-    try {
+        // Rasmni sleep orqali yuborish (Telegram cheklovlari uchun)
+    await new Promise(resolve => setTimeout(resolve, 300));
+        try {
       // Fayl mavjudligini tekshirish
       if (fs.existsSync(set.image)) {
         // Local faylni yuborish
         await ctx.replyWithPhoto(
-          { source: fs.createReadStream(set.image) },
+          set.image,
           {
             caption: caption,
             parse_mode: 'HTML',
@@ -373,11 +438,12 @@ bot.action('section_matolar', async (ctx) => {
   // Har bir mahsulot uchun alohida rasm yuborish
   for (const item of materials.matolar) {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
-    
-    try {
+        // Rasmni sleep orqali yuborish (Telegram cheklovlari uchun)
+    await new Promise(resolve => setTimeout(resolve, 300));
+        try {
       if (fs.existsSync(item.image)) {
         await ctx.replyWithPhoto(
-          { source: fs.createReadStream(item.image) },
+          item.image,
           {
             caption: caption,
             parse_mode: 'HTML',
@@ -411,11 +477,12 @@ bot.action('section_sochlar', async (ctx) => {
   // Har bir soch uchun alohida rasm yuborish
   for (const item of materials.sochlar) {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
-    
-    try {
+        // Rasmni sleep orqali yuborish (Telegram cheklovlari uchun)
+    await new Promise(resolve => setTimeout(resolve, 300));
+        try {
       if (fs.existsSync(item.image)) {
         await ctx.replyWithPhoto(
-          { source: fs.createReadStream(item.image) },
+          item.image,
           {
             caption: caption,
             parse_mode: 'HTML',
@@ -449,11 +516,12 @@ bot.action('section_oyoq_kiyim', async (ctx) => {
   // Har bir kiyim uchun alohida rasm yuborish
   for (const item of materials.oyoqKiyim) {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
-    
-    try {
+        // Rasmni sleep orqali yuborish (Telegram cheklovlari uchun)
+    await new Promise(resolve => setTimeout(resolve, 300));
+        try {
       if (fs.existsSync(item.image)) {
         await ctx.replyWithPhoto(
-          { source: fs.createReadStream(item.image) },
+          item.image,
           {
             caption: caption,
             parse_mode: 'HTML',
@@ -487,11 +555,12 @@ bot.action('section_aksessuarlar', async (ctx) => {
   // Har bir aksessuarning alohida rasm yuborish
   for (const item of materials.aksessuarlar) {
     const caption = `<b>${item.name}</b>\n\n💰 <b>Narxi: ${item.price.toLocaleString()} so\'m</b>`;
-    
-    try {
+        // Rasmni sleep orqali yuborish (Telegram cheklovlari uchun)
+    await new Promise(resolve => setTimeout(resolve, 300));
+        try {
       if (fs.existsSync(item.image)) {
         await ctx.replyWithPhoto(
-          { source: fs.createReadStream(item.image) },
+          item.image,
           {
             caption: caption,
             parse_mode: 'HTML',
